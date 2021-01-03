@@ -6,8 +6,7 @@
 
 module.exports = {
   siteName: 'Personal Tech Blog',
-  siteDescription: `Written and maintained by Manoj Chaurasiya.
-    Here I will write my Tech experiance as well as new learnings.`,
+  siteDescription: `Written and maintained by Manoj Chaurasiya.`,
 
   templates: {
     Post: '/:title',
