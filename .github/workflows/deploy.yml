@@ -31,8 +31,6 @@ jobs:
         run: |
           npm install
           npm run build
-          echo "-------generate new github uniq token-----"
-          echo $GITHUB_SHA
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.5.1
@@ -40,6 +38,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: dist # The folder the action should deploy.
-        #  CLEAN: true # Automatically remove deleted files from the deploy branch
-        #env:
-        #  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+          CLEAN: true # Automatically remove deleted files from the deploy branch
+        run: |
+          echo "-------generate new github uniq token-----"
+          echo $GITHUB_SHA
