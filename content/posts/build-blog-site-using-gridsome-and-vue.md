@@ -30,5 +30,6 @@ or simply use npx to create simple project
 
 ### Directory Structure and files
 - `package.json` this file content the packages or plugins which have been used in project.
+- `gridsome.server.js`
 - `static`  Files which will be put inside this folder will be copied to `dist` directory after project build.
 
