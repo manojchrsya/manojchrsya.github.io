@@ -1,6 +1,6 @@
 ---
 title: Build Blog Site using Gridsome and Vue
-date: 2021-01-04
+date: 2021-01-27
 published: true
 tags: ['Gridsome', 'Vue', 'Static Site Generator']
 series: false
