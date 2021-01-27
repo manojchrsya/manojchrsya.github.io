@@ -87,7 +87,7 @@ options we used for `souce-filesystem` in above snippets
 let's create `my-first-blog.md` in `content/blogs` directory.
 ```
 ---
-title: A post with a cover image
+title: My first blog
 date: 2019-01-07
 ---
 
@@ -101,3 +101,40 @@ and visit `http://localhost:8080/___explore` and try to execute the below query.
 
 ![Image](./images/graphql-query.png "GraphQL Query")
 
+If everything is correct then it should return the `title` of post in graphql response.
+
+### Create template for post
+
+Now we will create template in `src/templates` directory with same as
+we have declared `typeName` in `source-filesystem` config.
+
+let's create `Post.vue` file in template directory.
+
+```javascript
+<template>
+    <layout>
+        <div v-text="$page.post.title" />
+        <div v-html="$page.post.content" />
+    </layout>
+</template>
+
+<page-query>
+  query Post ($path: String) {
+      post: post (path: $path) {
+          title
+          content
+      }
+  }
+</page-query>
+```
+
+now what is `page-query`?, well it used to executing the `graphql` queries.
+
+query result can be access in `$page` instance. for eg: `$page.post.title`
+to access your blog just hit `http://localhost:8080/my-first-blog` in browser.
+
+##### Congratulations!!! you have created your first demo blog.
+gridsome have made it too simple to create blog site isn't it?
+
+checkout some [gridsome starter](https://gridsome.org/starters/) themes, just
+clone those repository and start writing the blog
