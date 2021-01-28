@@ -25,12 +25,13 @@ jobs:
         with:
           persist-credentials: false
       # bash doc/build-with-docker.sh
-      # mkdir -p public/doc
-      # cp doc/out/*.pdf public/doc
+
       - name: Build
         run: |
           npm install
           npm run build
+          mkdir -p public/doc
+          cp data/*.pdf public/data
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
