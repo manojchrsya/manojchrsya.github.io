@@ -28,8 +28,10 @@ jobs:
 
       - name: Build
         run: |
+          echo "-----project build------"
           npm install
           npm run build
+          echo "-----copy resume to dist directory------"
           mkdir -p dist/data
           cp data/*.pdf dist/data
 
