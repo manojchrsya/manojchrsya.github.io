@@ -30,8 +30,8 @@ jobs:
         run: |
           npm install
           npm run build
-          mkdir -p public/data
-          cp data/*.pdf public/data
+          mkdir -p dist/data
+          cp data/*.pdf dist/data
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
